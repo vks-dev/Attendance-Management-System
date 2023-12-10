@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="css/footerStyles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            margin-top: 10px;
+            width: 100%;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .feedback_form {
+            height: 440px;
+            width: 500px;
+            background-color: rgb(246, 248, 250);
+            border: 2px solid black;
+            border-radius: 8px;
+        }
+
+        img {
+            height: 400px;
+            width: 400px;
+            margin-left: 100px;
+        }
+
+        .form_input {
+            height: 30px;
+            width: 300px;
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            border-radius: 5px;
+            margin: 10px 0px;
+            padding: 3px 10px;
+        }
+
+        .form_msg {
+            height: 100px;
+            width: 300px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 5px;
+            margin: 10px 0px;
+            padding: 3px 10px;
+            text-align: justify;
+            resize: none;
+        }
+
+        .btn {
+            margin-top: 5px;
+            padding: 8px 30px;
+            border-radius: 50px;
+            color: white;
+            background-color: rgb(253, 81, 81);
+        }
+
+        .backBtn {
+            margin-left: 3%;
+            text-decoration-line: none;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <a href="index.php" class="backBtn">Back</a>
+    <header>
+        <h1>Feedback</h1>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <td><img src="img/customer-feedback-calicut.png" alt="feedback_image"></td>
+                <td>
+                    <form class="feedback_form" onsubmit="sendMsg(); reset(); return false;">
+                        <h2 style="text-align: left; margin:20px;">GET IN TOUCH</h2>
+                        <input type="text" class="form_input" placeholder="your name" id="name" name="name"
+                            autocomplete="off" required>
+                        <input type="text" class="form_input" placeholder="Email Id" id="email" name="email"
+                            autocomplete="off" required>
+                        <input type="text" class="form_input" placeholder="Phone no." id="ph_num" name="ph_num"
+                            autocomplete="off" required>
+                        <textarea class="form_msg" id="msg" name="msg"
+                            autocomplete="off" placeholder="How can we help you?"></textarea><br>
+                        <input class="btn" type="submit">
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2023 | Rise Krishna Sai Prakasam CSE Students.</p>
+        <p>Made with ❤ in india</p>
+    </footer>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        function sendMsg() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var ph_num = document.getElementById("ph_num").value;
+            var msg = document.getElementById("msg").value;
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "venkatakrishnasai.activities@gmail.com",
+                Password: "36F4DA50D2EF90672D58ADE67F86718CBC3C",
+                To: '198a1a05b7.krishnasai@gmail.com',
+                From: 'venkatakrishnasai.activities@gmail.com',
+                Subject: 'You got feedback from ' + name,
+                Body: "Details of sender <br>" +
+                    "Name :" + name + "<br>" +
+                    "Email :" + email + "<br>" +
+                    "Phone number :" + ph_num + "<br>" +
+                    "Feedback :<br>" + msg
+            }).then(
+                message => alert("Message Sent")
+            );
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+Recommended PHP version: 5.6.3 or above
+Database Used: MYSQL
+
+Admin Login Details
+
+Username: admin
+Password: admin
