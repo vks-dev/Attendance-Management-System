@@ -1,3 +1,3 @@
 ## Attendance Management System in PHP
 
-This is my final year B.Tech project. I was part of a 5 member team and together we made this project using HTML, CSS, Bootstrap, JS, PHP and MySQL.
+The Attendance Management System is a web-based application designed for educational institutions to efficiently manage and monitor student attendance. Built using HTML, CSS, JavaScript, Bootstrap, and PHP, the system supports three user roles: Admin, Teacher, and Student. Admin users can onboard teachers and students into the system and generate attendance reports to analyze overall attendance trends. Teacher users can create and manage their classes, add students to those classes, and record attendance. Student users have access to view and generate reports related to their academic attendance. The application focuses on role-based access, streamlined workflows, and clear visibility into attendance data.
